@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Tajcoin Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0d0d0d;
+            margin: 0;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Background pulse effect */
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        /* Floating 'T' effect */
+        @keyframes float {
+            0% { transform: translateY(10px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Workers movement effect */
+        @keyframes work-move {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Apply the animations */
+        .pulse {
+            animation: pulse 3s infinite alternate;
+        }
+
+        .float {
+            animation: float 1.5s ease-out forwards;
+        }
+
+        .work {
+            animation: work-move 2s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <svg class="logo" viewBox="0 0 200 200">
+        <!-- Circular background -->
+        <circle class="pulse" cx="100" cy="100" r="90" fill="url(#gradient)" stroke="#1f1f1f" stroke-width="5"/>
+        
+        <!-- Gradient effect -->
+        <defs>
+            <radialGradient id="gradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#4d90fe"/>
+                <stop offset="100%" stop-color="#1a1a1a"/>
+            </radialGradient>
+        </defs>
+
+        <!-- Stylized 'T' -->
+        <g class="float">
+            <rect x="85" y="50" width="30" height="80" fill="white" rx="5"/>
+            <rect x="70" y="50" width="60" height="20" fill="white" rx="5"/>
+        </g>
+
+        <!-- Minimalist hardworking figures -->
+        <g class="work">
+            <circle cx="50" cy="160" r="8" fill="white"/>
+            <line x1="50" y1="168" x2="50" y2="185" stroke="white" stroke-width="3"/>
+            <line x1="40" y1="180" x2="60" y2="180" stroke="white" stroke-width="3"/>
+            <line x1="50" y1="185" x2="45" y2="195" stroke="white" stroke-width="3"/>
+            <line x1="50" y1="185" x2="55" y2="195" stroke="white" stroke-width="3"/>
+        </g>
+
+        <g class="work">
+            <circle cx="150" cy="160" r="8" fill="white"/>
+            <line x1="150" y1="168" x2="150" y2="185" stroke="white" stroke-width="3"/>
+            <line x1="140" y1="180" x2="160" y2="180" stroke="white" stroke-width="3"/>
+            <line x1="150" y1="185" x2="145" y2="195" stroke="white" stroke-width="3"/>
+            <line x1="150" y1="185" x2="155" y2="195" stroke="white" stroke-width="3"/>
+        </g>
+    </svg>
+</body>
+</html>
